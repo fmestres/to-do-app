@@ -1,0 +1,27 @@
+@import '../../App'
+.input
+    height: 2rem
+    background-color: transparent
+    border-radius: $border-radius
+    border: 2px solid $white
+    outline: none
+    padding: $gap/8 $gap/4
+    margin: $gap/2 0
+    box-shadow: 0
+    color: $white
+
+    &:first-child
+        margin: $gap 0 $gap/4 0
+    
+    &:last-child
+        margin: $gap/4 0 $gap 0
+
+    &:focus
+        box-shadow: 0 2px 12px rgba($blue-grey, .75)
+        transition: box-shadow .3s ease-in-out
+        -webkit-transition: box-shadow .3s ease-in-out
+
+    ::placeholder
+        position: absolute
+        &:focus
+            transform: translateY(-50%)

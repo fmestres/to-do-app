@@ -1,0 +1,36 @@
+$dark: #000505
+$violet: #3B3355
+$blue-grey: #5D5D81
+$light-blue: #BFCDE0
+$white: #FEFCFD
+$danger: #FF0000
+
+$gap: 32px
+$border-radius: 10px
+
+
+//defines media queries from() and until()
+@mixin until($breakpoint)
+    @media only screen and (max-width: $breakpoint - 1px)
+        @content
+
+@mixin from($breakpoint)
+    @media only screen and (min-width: ($breakpoint))
+        @content
+
+//sets our breakpoints
+$mobile: 640px
+$tablet: 768px
+$dektop: 960px + (2 * $gap)
+
+
+
+
+@font-face 
+    font-family: "Poppins"
+    src: url('https://fonts.googleapis.com/css2?family=Poppins&display=swap')
+
+    
+.App
+    font-family: 'Poppins', sans-serif
+

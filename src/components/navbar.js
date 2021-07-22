@@ -4,8 +4,8 @@ import '../assets/sass/navbar.sass'
 import logo from '../logo.svg'
 import Button from './common/button'
 import Modal from './common/modal'
-import Input from './common/input'
-import LoginForm from './login-form'
+import UserAccessForms from './user-access-forms'
+
 
 class Navbar extends Component {
 
@@ -44,15 +44,17 @@ class Navbar extends Component {
         this.setState({isFormModalActive: !this.state.isFormModalActive})
     }
 
-
     render() {
         return (
             <nav className='navbar'>
-                <Modal onClose={this.toggleFormModal} isActive={this.state.isFormModalActive}>
-                    Hola me llamo fran y estoy probando el modal de la pagina que estoy haciendo porque no tengo ganas de estudiar
-                    {this.state.isFormModalActive}
-                    <LoginForm />
+                {this.state.isFormModalActive ?
+                (
+                <Modal onClose={this.toggleFormModal}>
+                    <UserAccessForms />
                 </Modal>
+                ):
+                null}
+
                 <div className='navbar-left'>
                     <div className='logo-container'>
                         <img className='logo' src={logo} alt='Brand Name' width="60px" height="60px"></img>

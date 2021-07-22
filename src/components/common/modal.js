@@ -2,8 +2,9 @@ import '../../assets/sass/modal.sass'
 import Button from './button'
 import PropTypes from 'prop-types'
 
-const Modal = ({isActive=false, children, onClose=f=>f}) => (
-    <div className='modal-container' style={{display: isActive ? 'block' : 'none'}}>
+const Modal = ({children, onClose=f=>f}) => (
+    
+    <div className='modal-container'>
         <div className='modal'>
             <div className='modal-top'>
                 <Button buttonType='is-delete' onClick={onClose}/>

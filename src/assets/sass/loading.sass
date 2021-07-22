@@ -1,0 +1,28 @@
+@import '../../App'
+
+$loader-diameter: 1.5rem
+
+
+@keyframes spin
+    from
+        transform: rotate(0deg)
+    to
+        transform: rotate(359deg)
+
+
+.is-loading
+    color: transparentize($white, 1) !important
+    &::before
+        content: ''
+        box-sizing: border-box
+        position: absolute
+        top: 50%
+        left: 50%
+        width: $loader-diameter
+        height: $loader-diameter
+        margin-top: -($loader-diameter/2)
+        margin-left: -($loader-diameter/2)
+        border: 4px 1px 1px 1px solid $white
+        box-shadow: 0 -1px 2px $white, inset 0 1px 2px $white
+        border-radius: 50%
+        animation: spin .6s linear infinite;

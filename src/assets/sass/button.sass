@@ -1,22 +1,27 @@
 @import '../../App'
 
-$primary: $white
-
 .button
     outline: none
+    position: relative
     margin: auto $gap/2
     font-size: 1.1rem
     border: 2px solid
 
+    &.is-fluid //is fluid does not scale up button since it's supposed to take up all the available space
+        margin: $gap/4 0
+        &:hover, &:focus
+            transform: none
+            -webkit-transform: none
+
     &.is-primary
         background-color: $blue-grey
         border-color: $blue-grey
-        color: $primary
+        color: $white
 
     &.is-secondary, &.is-delete
         background-color: transparent
         border-color: $white
-        color: $primary
+        color: $white
 
     &.is-primary, &.is-secondary
         height: 2.5rem
@@ -26,14 +31,29 @@ $primary: $white
         width: 2rem
         height: 2rem
         border-radius: 50%
-        
 
+    &:disabled
+        opacity: .6
+        cursor: not-allowed
+
+        
     &:hover, &:focus
-        background-color: $primary
-        color: $dark
-        transform: scale(1.1)
-        -webkit-transform: scale(1.1)
-        -webkit-transform: scale(1.1)
-        transition: all .2s ease-in-out
-        -webkit-transition: all .2 ease-in-out
-        -moz-transition: all .2 ease-in-out
+        &:not(:disabled)
+            background-color: $white
+            color: $dark
+            transform: scale(1.1)
+            -webkit-transform: scale(1.1)
+            transition: all .2s ease-in-out
+            -webkit-transition: all .2 ease-in-out
+            -moz-transition: all .2 ease-in-out
+    
+    .button-content
+        width: 100%
+        display: flex
+        justify-content: space-around
+        align-content: center
+
+    &.is-success
+        background-color: $success
+        border-color: $success
+        opacity: .5

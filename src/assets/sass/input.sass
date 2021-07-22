@@ -1,27 +1,40 @@
 @import '../../App'
 .input
-    height: 2rem
+    height: 2.25rem
     background-color: transparent
     border-radius: $border-radius
     border: 2px solid $white
     outline: none
     padding: $gap/8 $gap/4
-    margin: $gap/2 0
+    margin: $gap/4 0
     box-shadow: 0
+
     color: $white
+    letter-spacing: .1rem
+    font-size: .9rem
 
     &:first-child
-        margin: $gap 0 $gap/4 0
+        margin: $gap/2 0 $gap/4 0
     
     &:last-child
-        margin: $gap/4 0 $gap 0
+        margin: $gap/4 0 $gap/2 0
 
     &:focus
-        box-shadow: 0 2px 12px rgba($blue-grey, .75)
-        transition: box-shadow .3s ease-in-out
-        -webkit-transition: box-shadow .3s ease-in-out
+        &:not(:disabled)
+            box-shadow: 0 4px 12px rgba($blue-grey, .25)
+            transition: box-shadow .3s ease-in-out
+            -webkit-transition: box-shadow .3s ease-in-out
+            
+    &:disabled
+        opacity: .6
+        cursor: not-allowed
 
-    ::placeholder
-        position: absolute
-        &:focus
-            transform: translateY(-50%)
+    &::placeholder
+        color: $white
+        opacity: .7
+
+
+        
+
+
+

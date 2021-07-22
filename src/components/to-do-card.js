@@ -11,3 +11,5 @@ class ToDoCard extends Component {
 
     constructor() {}
 }
+
+export default ToDoCard
